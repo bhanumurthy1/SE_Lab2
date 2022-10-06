@@ -1,0 +1,15 @@
+.header-list-container {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  list-style: none;
+  background: rgb(168, 24, 139);
+}
+.list-item {
+  text-decoration: none;
+  color: rgb(241, 236, 239);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
