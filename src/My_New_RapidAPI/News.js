@@ -65,7 +65,7 @@ export class News extends React.Component {
             <div>
                 <ul class="list-group">
                     {this.state.articles.map(article =>{
-                        return(<li class="list-group-item">   <a href='{article.url}'>{article.title}</a></li>)
+                        return(<li class="list-group-item">   <a href={article.url}>{article.title}</a></li>)
                     })}
                 </ul>
             </div>  
