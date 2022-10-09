@@ -7,17 +7,29 @@ let defaultDescription =
   "Hello All!!, This is Bhanu Pravallika Pothuru. This is a sample application where you can edit your name along with the description as part of the User Profile. You can also integrate the third party API and display the content over it. Lastly, you can also do the addition of 2 numbers and can get the display dynamically";
 
 class Home extends Component {
+  
+
+myChangeHandler = (event) => {
+  debugger;
+  let nam = event.target.name;
+  let val = event.target.value;
+  this.setState({ [nam]: val }); //nam becomes a computed property.
+  // so it will not set "nam" instead will see the value of nam then set stuff,
+}
+
+
   state = { userName: defaultName, userDescription: defaultDescription };
 
   onClickNameChange = (event) => {
-    let newName = prompt("Enter your Name");
+    debugger;
+    let newName = event.target.value;
     if (newName) {
       this.setState({ userName: newName });
     }
   };
 
   onClickDescriptionChange = (event) => {
-    let newDescription = prompt("About Yourself");
+    let newDescription =event.target.value;
     if (newDescription) {
       this.setState({ userDescription: newDescription });
     }
@@ -25,17 +37,14 @@ class Home extends Component {
 
   render() {
     const { userName, userDescription } = this.state;
-    const myStyle={
-      backgroundImage: 
-"url('https://media.geeksforgeeks.org/wp-content/uploads/rk.png')",
-      height:'100vh',
-      marginTop:'-70px',
-      fontSize:'50px',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-  };
+    
     return (
-      <div className="main-container p-4 ">
+      <div className="main-container p-4 " style={{
+        backgroundColor: 'lavender',
+        width: '1500px',
+        height: '10000px'
+      }}>
+
         <div className="my-container">
           <div>
             <img
@@ -46,25 +55,32 @@ class Home extends Component {
           </div>
           <div className="data-container">
             <div className=" d-flex flex-row justify-content-start align-items-center">
-              <h1 className="main-heading">{userName}</h1>
-              <button className="edit-button " onClick={this.onClickNameChange}>
-                Edit
-              </button>
+            <h3 className="main-heading"><label htmlFor="secondNumber">Name: {userName}</label></h3>
             </div>
             <p className="description">
-              {userDescription}
-              <span>
-                <button
-                  className="edit-button button2"
-                  onClick={this.onClickDescriptionChange}
-                >
-                  Edit
-                </button>
-              </span>
+           <h4><label htmlFor="secondNumber">About Yourself: {userDescription}</label></h4>
             </p>
+            <br></br>
+            <h4><label htmlFor="secondNumber">Edit Your Name:  </label>
+            <input
+                                type="string"
+                                name="username"
+                                id="usernameid"
+                                className="form-control"
+                                onChange={this.onClickNameChange} /></h4>
+                                <br></br>
+            <h4><label htmlFor="secondNumber">Edit About Yourself:  </label>
+            <input
+                                type="string"
+                                name="desc"
+                                id="descid"
+                                className="form-control"
+                                onChange={this.onClickDescriptionChange} /></h4>
+
           </div>
         </div>
       </div>
+      
     );
   }
 }
