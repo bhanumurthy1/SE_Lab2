@@ -3,23 +3,34 @@ import "./Header.css";
 const Header = () => {
   return (
     <nav class=" bg-primary">
-      <ul class="container-fluid header-list-container">
-        <li class="m-3">
+     
+      
+      <ol class="container-fluid header-list-container">
+      <li class="m-3">
           <Link to="/" class=" list-item ">
-            User Profile
+            <h2>User Profile</h2> 
+          </Link>
+        </li> 
+        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class=" m-3">
+        <Link to="/news" class=" list-item ">
+            <h2>Live News</h2>
           </Link>
         </li>
-        <li class=" m-3">
-          <Link to="/news" class=" list-item ">
-            News
-          </Link>
-        </li>
-        <li class=" m-3">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <li class=" m-3">
           <Link to="/sum" class=" list-item ">
-            Addition
+            <h2>Addition</h2>
           </Link>
         </li>
-      </ul>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <li class=" m-3">
+          <Link to="/samplegetapi" class=" list-item ">
+            <h2>SampleGetAPI</h2>
+          </Link>
+        </li>
+        
+      </ol>
     </nav>
   );
 };
