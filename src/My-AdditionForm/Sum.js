@@ -35,43 +35,47 @@ export class Sum extends React.Component {
     }
 
     render() {
-        const myStyle={
-            backgroundImage: 
-     "/Users/bhanupothuru/Downloads/Me/sefinalproj/src/Images/SumBack.png",
-           
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-        };
         return (
            
-            <div>
+            <div style={{
+                backgroundColor: 'lavender',
+                width: '1500px',
+                height: '10000px'
+              }}>
                 <div className="row"><div className="col">
                     <form onSubmit={this.mySubmitHandler}>
                         <div className="form-group">
-                            <h4><label htmlFor="firstNumber">Input Value 1:</label></h4>
+                            <br></br>
+                            <center><h4><label htmlFor="firstNumber">Input Value 1:</label>&nbsp;&nbsp;&nbsp;
                             <input
                                 type="number"
                                 name="firstNumber"
                                 id="firstNumber"
                                 className="form-control"
-                                onChange={this.myChangeHandler} />
+                                onChange={this.myChangeHandler} /></h4></center>
                         </div>
                         <div className="form-group">
-                            <h4><label htmlFor="secondNumber">Input Value 2:</label></h4>
+                           <center><h4><label htmlFor="secondNumber">Input Value 2:</label> &nbsp;&nbsp;&nbsp;
                             <input
                                 type="number"
                                 name="secondNumber"
                                 id="secondNumber"
                                 className="form-control"
-                                onChange={this.myChangeHandler} />
+                                onChange={this.myChangeHandler} /></h4></center> 
                         </div>
                         <br></br>
+                        <center><button type="submit" className="btn btn-primary"><bold>Sum</bold></button></center>
                        
                     </form>
                 </div>
                 </div>
 
-               
+                <div className="row">
+                    <div className="col">
+                        <center><h3>Your Addition Result (from server) is: {this.state.queryResult} </h3></center>
+                    </div>
+                </div>
+
                 <div className="row">
                     <div className="col">
                         {/*Not the best way to do it, but works for small compute operations*/}
